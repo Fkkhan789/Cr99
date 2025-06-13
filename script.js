@@ -7,5 +7,5 @@ function sendToWhatsApp() {
 
   const message = `*Free Fire Top-Up Request*%0A🎮 UID: ${uid}%0A🧑‍💼 Name: ${name}%0A💎 Diamonds: ${diamonds}%0A💳 Payment Method: ${paymentMethod}%0A📱 Sender Number: ${sender}`;
 
-  window.open(`https://wa.me/03020350825?text=${message}`, '_blank');
+  window.open(`https://wa.me/03182898491?text=${message}`, '_blank');
 }
