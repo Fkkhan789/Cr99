@@ -1,11 +1,29 @@
 function sendToWhatsApp() {
-  const uid = document.getElementById('uid').value;
-  const name = document.getElementById('name').value;
-  const diamonds = document.getElementById('diamonds').value;
-  const paymentMethod = document.getElementById('paymentMethod').value;
-  const sender = document.getElementById('sender').value;
+  const uid = document.getElementById("uid").value.trim();
+  const name = document.getElementById("name").value.trim();
+  const service = document.getElementById("diamonds").value;
+  const payment = document.getElementById("payment method ").value;
+  const sender = document.getElementById("sender").value.trim();
 
-  const message = `*Free Fire Top-Up Request*%0A🎮 UID: ${uid}%0A🧑‍💼 Name: ${name}%0A💎 Diamonds: ${diamonds}%0A💳 Payment Method: ${paymentMethod}%0A📱 Sender Number: ${sender}`;
+  if (!uid || !service || !payment || !sender) {
+    alert("Please fill all required fields.");
+    return;
+  }
 
-  window.open(`https://wa.me/03182898491?text=${message}`, '_blank');
+  const message = `📩 NEW HACKING REQUEST
+
+🔐 UID: ${uid}
+👤 Name: ${name || "Not Provided"}
+🛠️ Selected Service: ${service}
+💸 Payment Method: ${payment}
+📱 Email/Number: ${sender}
+📷 Photo: Attached (User uploaded)
+
+📞 Please contact the user for further action.`;
+
+  const phoneNumber = "03182898491"; // WhatsApp number
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  window.open(whatsappURL, "_blank");
 }
